@@ -1,27 +1,55 @@
+const HtmlWebpackPlugin = require('html-webpack-plugin');
+const { CleanWebpackPlugin } = require('clean-webpack-plugin');
+const { VueLoaderPlugin } = require('vue-loader');
+const MiniCssExtractPlugin = require('mini-css-extract-plugin');
+const ESLintPlugin = require('eslint-webpack-plugin');
 const path = require('path');
-const HtmlWebpackPlugin = require('html-webpack-plugin')
+
+const SRC_PATH = path.join(__dirname, 'src');
 
 module.exports = {
-  mode: 'development',
-  entry: path.resolve(__dirname, './src/index.js'),
+  mode: process.env.NODE_ENV,
+  watch: !(process.env.NODE_ENV === 'production'),
+  entry: {
+    main: `${SRC_PATH}/main.js`,
+  },
   output: {
-    path: path.resolve(__dirname, './dist'),
-    filename: '[name].bundle.js',
+    filename: 'main.js',
+    path: path.resolve(__dirname, 'dist'),
   },
   module: {
     rules: [
       {
+        test: /\.vue$/,
+        loader: 'vue-loader',
+      },
+      {
         test: /\.js$/,
         exclude: /node_modules/,
-        use: ['babel-loader'],
+        loader: 'babel-loader',
+      },
+      {
+        test: /\.s[ac]ss$/,
+        use: [
+          {
+            loader: MiniCssExtractPlugin.loader,
+          },
+          'css-loader',
+          'sass-loader',
+        ],
       },
     ],
   },
   plugins: [
+    new VueLoaderPlugin(),
+    new CleanWebpackPlugin(),
+    new ESLintPlugin(),
+    new MiniCssExtractPlugin({
+      filename: 'styles.css',
+    }),
     new HtmlWebpackPlugin({
-      title: 'To-Do List',
-      template: path.resolve(__dirname, './src/template.html'),
-      filename: 'index.html',
+      template: path.resolve(__dirname, 'public', 'index.html'),
+      favicon: './public/favicon.ico',
     }),
   ],
-}
+};
