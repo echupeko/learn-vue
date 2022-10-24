@@ -6,7 +6,7 @@
     <router-view />
     <div>
       <HomePage/>
-      <AboutPage :title="'About'"/>
+      <AboutPage/>
     </div>
   </div>
 </template>
