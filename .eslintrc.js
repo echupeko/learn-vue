@@ -3,7 +3,11 @@ module.exports = {
   "env": {
     "node": true,
   },
+  "plugins": ["@typescript-eslint"],
   "extends": [
+    "eslint:recommended",
+    "plugin:@typescript-eslint/eslint-recommended",
+    "plugin:@typescript-eslint/recommended",
     "plugin:vue/vue3-strongly-recommended",
     "plugin:vue/vue3-essential",
     "plugin:vue/vue3-recommended",
@@ -12,6 +16,7 @@ module.exports = {
   ],
   "rules": {
     "no-restricted-exports": 0,
+    "no-plusplus": 0,
     "max-len": [1, 120, 2, { "ignoreComments": true }],
     "vue/multi-word-component-names": ["error", {
       "ignores": []
@@ -32,8 +37,10 @@ module.exports = {
       ],
       "alphabetical": false,
     }],
+    "@typescript-eslint/no-var-requires": 0
   },
   "parserOptions": {
     "parser": "@babel/eslint-parser",
+    // "parser": "@typescript-eslint/parser",
   },
 };
