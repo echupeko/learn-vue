@@ -10,8 +10,9 @@ const SRC_PATH = path.join(__dirname, 'src');
 module.exports = {
   mode: process.env.NODE_ENV,
   watch: !(process.env.NODE_ENV === 'production'),
+  devtool: 'source-map',
   entry: {
-    main: `${SRC_PATH}/main.js`,
+    main: `${SRC_PATH}/main.ts`,
   },
   output: {
     filename: 'main.js',
@@ -23,6 +24,7 @@ module.exports = {
         test: /\.tsx?$/,
         loader: 'ts-loader',
         options: {
+          configFile: "tsconfig.json",
           appendTsSuffixTo: [/\.vue$/],
         },
         exclude: /node_modules/,
@@ -30,6 +32,12 @@ module.exports = {
       {
         test: /\.vue$/,
         loader: 'vue-loader',
+        options: {
+          loaders: {
+            ts: 'ts-loader'
+          },
+          esModule: true
+        }
       },
       {
         test: /\.js$/,

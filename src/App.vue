@@ -11,7 +11,7 @@
   </div>
 </template>
 
-<script>
+<script lang="ts">
 import HomePage from "./views/HomePage";
 import AboutPage from "./views/AboutPage";
 

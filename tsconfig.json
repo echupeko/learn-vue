@@ -6,11 +6,11 @@
     "strict": true,
     "jsx": "preserve",
     "moduleResolution": "node",
-//    "include": [
-//      "src/.",
-//    ],
-//    "exclude": ["node_modules"]
-  }
+    "allowSyntheticDefaultImports": true
+  },
+  "include": [
+    "src/.",
+  ]
 }
 //{
 //  "compilerOptions": {

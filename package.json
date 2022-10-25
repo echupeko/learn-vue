@@ -25,11 +25,11 @@
     "not dead"
   ],
   "dependencies": {
-    "@rushstack/eslint-patch": "^1.2.0",
     "@vue/eslint-config-airbnb": "^7.0.0",
     "core-js": "^3.25.5",
     "vue": "^3.2.41",
     "vuex": "^4.0.2",
+    "vue-class-component": "^8.0.0-rc.1",
     "vue-router": "^4.1.5"
   },
   "devDependencies": {

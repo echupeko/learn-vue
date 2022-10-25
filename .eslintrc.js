@@ -12,9 +12,12 @@ module.exports = {
     "plugin:vue/vue3-essential",
     "plugin:vue/vue3-recommended",
     "@vue/eslint-config-airbnb",
+    "@vue/typescript/recommended",
     "prettier",
   ],
   "rules": {
+    "import/extensions": 0,
+    "import/no-unresolved": 0,
     "no-restricted-exports": 0,
     "no-plusplus": 0,
     "max-len": [1, 120, 2, { "ignoreComments": true }],
@@ -40,7 +43,7 @@ module.exports = {
     "@typescript-eslint/no-var-requires": 0
   },
   "parserOptions": {
-    "parser": "@babel/eslint-parser",
-    // "parser": "@typescript-eslint/parser",
+    // "parser": "@babel/eslint-parser",
+    "parser": "@typescript-eslint/parser",
   },
 };
