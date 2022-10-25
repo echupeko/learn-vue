@@ -50,9 +50,9 @@ module.exports = {
     ],
   },
   resolve: {
+    extensions: ['.jsx', '.ts', '.tsx', '.vue', '...'],
     alias: {
       "@": path.resolve(__dirname, 'src'),
-      Templates: path.resolve(__dirname, 'src/views'),
     },
   },
   plugins: [
