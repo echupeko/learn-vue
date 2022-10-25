@@ -12,13 +12,14 @@
 </template>
 
 <script lang="ts">
+import { defineComponent } from "vue";
 import HomePage from "./views/HomePage";
 import AboutPage from "./views/AboutPage";
 
-export default {
+export default defineComponent({
   name: "App",
   components: { AboutPage, HomePage },
-};
+});
 </script>
 
 <style lang="scss">

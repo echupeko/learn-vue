@@ -24,7 +24,6 @@ module.exports = {
         test: /\.tsx?$/,
         loader: 'ts-loader',
         options: {
-          configFile: "tsconfig.json",
           appendTsSuffixTo: [/\.vue$/],
         },
         exclude: /node_modules/,
@@ -32,12 +31,6 @@ module.exports = {
       {
         test: /\.vue$/,
         loader: 'vue-loader',
-        options: {
-          loaders: {
-            ts: 'ts-loader'
-          },
-          esModule: true
-        }
       },
       {
         test: /\.js$/,
@@ -55,6 +48,12 @@ module.exports = {
         ],
       },
     ],
+  },
+  resolve: {
+    alias: {
+      "@": path.resolve(__dirname, 'src'),
+      Templates: path.resolve(__dirname, 'src/views'),
+    },
   },
   plugins: [
     new VueLoaderPlugin(),

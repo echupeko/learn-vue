@@ -40,7 +40,8 @@ module.exports = {
       ],
       "alphabetical": false,
     }],
-    "@typescript-eslint/no-var-requires": 0
+    "@typescript-eslint/no-var-requires": 0,
+    "@typescript-eslint/ban-types": 0
   },
   "parserOptions": {
     // "parser": "@babel/eslint-parser",
