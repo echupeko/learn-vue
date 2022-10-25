@@ -13,8 +13,8 @@
 
 <script lang="ts">
 import { defineComponent } from "vue";
-import HomePage from "./views/HomePage";
-import AboutPage from "./views/AboutPage";
+import HomePage from "@/views/HomePage";
+import AboutPage from "@/views/AboutPage";
 
 export default defineComponent({
   name: "App",

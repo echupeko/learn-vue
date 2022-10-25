@@ -1,5 +1,5 @@
-import { createRouter, createWebHashHistory } from 'vue-router';
-import HomePage from '../views/HomePage';
+import { createRouter, createWebHashHistory, Router } from "vue-router";
+import HomePage from '@/views/HomePage';
 
 const routes = [
   {
@@ -10,11 +10,11 @@ const routes = [
   {
     path: '/about',
     name: 'about',
-    component: () => import(/* webpackChunkName: "about" */ '../views/AboutPage'),
+    component: () => import(/* webpackChunkName: "about" */ '@/views/AboutPage'),
   },
 ];
 
-const router = createRouter({
+const router: Router = createRouter({
   history: createWebHashHistory(),
   routes,
 });

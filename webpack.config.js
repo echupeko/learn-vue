@@ -17,6 +17,7 @@ module.exports = {
   output: {
     filename: 'main.js',
     path: path.resolve(__dirname, 'dist'),
+    libraryExport: 'default',
   },
   module: {
     rules: [
@@ -50,9 +51,9 @@ module.exports = {
     ],
   },
   resolve: {
+    extensions: ['.ts', '.js'],
     alias: {
       "@": path.resolve(__dirname, 'src'),
-      Templates: path.resolve(__dirname, 'src/views'),
     },
   },
   plugins: [
